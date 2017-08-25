@@ -1,0 +1,29 @@
+server:
+  port: 8004
+  context-path: /file
+
+#注册中心地址
+url.eureka: 218.245.66.238:9001
+
+#设置文件存放目录
+image:
+  #头像目录
+  headPath: E:\home\image
+
+spring:
+  jackson:
+    serialization:
+      indent_output: true
+  redis:
+    host: 218.245.66.238
+    port: 6379
+
+#注册中心配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${url.eureka}/eureka/
+  instance:
+    prefer-ip-address: true
+    preferIpAddress: true
+    instance-id: 127.0.0.1:${server.port}
